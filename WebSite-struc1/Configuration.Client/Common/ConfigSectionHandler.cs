@@ -4,7 +4,7 @@ namespace Configuration.Client.Common
 {
     public sealed class ConfigSectionHandler : ConfigurationSection
     {
-        public const string ConfigSectionName = "aqrConfig";
+        public const string ConfigSectionName = "Config";
 
         [ConfigurationProperty("invalidationTimeoutSeconds")]
         public int InvalidationTimeoutSeconds

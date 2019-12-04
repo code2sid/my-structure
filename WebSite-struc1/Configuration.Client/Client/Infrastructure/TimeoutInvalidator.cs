@@ -12,7 +12,7 @@ namespace Configuration.Client.Client.Infrastructure
     {
         public void StartMonitoring(Func<IEnumerable<ConcurrentDictionary<string, SettingNode>>> getTargetFunc, CancellationToken cancellationToken, TimeSpan pollingInterval)
         {
-            ConfigSectionHandler section = (ConfigSectionHandler)ConfigurationManager.GetSection("aqrConfig");
+            ConfigSectionHandler section = (ConfigSectionHandler)ConfigurationManager.GetSection("Config");
             int num = section != null ? section.InvalidationTimeoutSeconds : 300;
             Task.Factory.StartNew(new Action<object>(TimeoutInvalidator.DoChecks), (object)new TimeoutInvalidator.Context()
             {
