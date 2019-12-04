@@ -1,0 +1,97 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{32C7C4FB-DA59-4CE1-9138-6A5FE1821399}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Configuration.Client</RootNamespace>
+    <AssemblyName>Configuration.Client</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.ConfigurationManager, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Configuration.ConfigurationManager.4.6.0\lib\net461\System.Configuration.ConfigurationManager.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.AccessControl, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.AccessControl.4.6.0\lib\net461\System.Security.AccessControl.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Permissions, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Permissions.4.6.0\lib\net461\System.Security.Permissions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Principal.Windows, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Principal.Windows.4.6.0\lib\net461\System.Security.Principal.Windows.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Client\ConfigurationProviderBuilder.cs" />
+    <Compile Include="Client\IConfigurationProvider.cs" />
+    <Compile Include="Client\IConfigurationProviderBuilder.cs" />
+    <Compile Include="Client\Infrastructure\ClassRegistration.cs" />
+    <Compile Include="Client\Infrastructure\ConfigurationBuilderContext.cs" />
+    <Compile Include="Client\Infrastructure\FindClassResult.cs" />
+    <Compile Include="Client\Infrastructure\IAdapter.cs" />
+    <Compile Include="Client\Infrastructure\IAdapterFactory.cs" />
+    <Compile Include="Client\Infrastructure\IAdapterPipeline.cs" />
+    <Compile Include="Client\Infrastructure\ITimeoutInvalidator.cs" />
+    <Compile Include="Client\Infrastructure\LoadSettingResult.cs" />
+    <Compile Include="Client\Infrastructure\SettingNode.cs" />
+    <Compile Include="Client\Infrastructure\TimeoutInvalidator.cs" />
+    <Compile Include="Client\IRegistration.cs" />
+    <Compile Include="Client\Setting.cs" />
+    <Compile Include="Common\AppConfigEnvs.cs" />
+    <Compile Include="Common\AppConfigRoot.cs" />
+    <Compile Include="Common\AppConfigSetting.cs" />
+    <Compile Include="Common\ClassName.cs" />
+    <Compile Include="Common\ConfigSectionHandler.cs" />
+    <Compile Include="Common\ConfigSourceInfo.cs" />
+    <Compile Include="Common\ConfigSourceType.cs" />
+    <Compile Include="Common\Constants.cs" />
+    <Compile Include="Common\EnvironmentInfo.cs" />
+    <Compile Include="Common\SupportedConfigFormat.cs" />
+    <Compile Include="Common\Utility\StringExtensions.cs" />
+    <Compile Include="Common\Utility\ValidationExtensions.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
