@@ -1,0 +1,29 @@
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" routerLink="">Counterparty Selection Workflow</a>
+                <a class="navbar-brand aqr-brand" routerLink=""></a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li id="MenuSummary" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+                      <a [routerLink]="['']">
+                        <span class="glyphicon glyphicon-home aqr_icon_size_nav"></span>Home
+                      </a>
+                    </li>
+                    <li id="MenuAdmin" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}" *ngIf="isAdmin">
+                      <a [routerLink]="['admin']">
+                        <span class="glyphicon glyphicon-briefcase aqr_icon_size_nav"></span>Admin
+                      </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
